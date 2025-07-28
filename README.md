@@ -12,7 +12,7 @@ The objective of this project is to extract the branded food data provided by US
 For this exercise, a supervised regression learning approach is used since the objective is to predict the energy values based on nutrient profile. The expected output is a predicted energy value based on the nutrient composition provided in the food label
 
 ### Development Details
-- The Jupyter notebook capstone_V1.ipynb has the code and execution results for each phase listed above
+- The Jupyter notebook capstone_final.ipynb has the code and execution results for each phase listed above
 - The file data_prep_bq.sql is a BigQuery query template that reads the different CSV files downloaded from the USDA FDC website for branded data and conducts necessary joins and pivots to get the data in the required format for this project.
 - The file final_result_v2_csv.zip contains the file final_result_v2.csv, which is the output of the BigQuery execution and is used as the starting point in the Jupyter notebook
 - The file 'Capstone - Food Category Mapping-Sheet1.csv' is an offline manual exercise to clean the number of branded food categories. Additional context can be viewed in the Jupyter notebook
@@ -169,7 +169,8 @@ Random Forest (After Tuning) | 298.921546 | 9.513188 | 0.984832
 Ridge (After Tuning) | 690.552414 | 12.837281 | 0.964771
 Random Forest (After Tuning) | 347.374416 | 9.891508 | 0.982279
 
-The above tables indicate that while hyperparameter tuning reduced the accuracy of both ridge and random forest models (indicated by higher MSE and lower R-squared), the random forest model still looks to be the best bet.
+The above tables indicate that while hyperparameter tuning reduced the accuracy of both ridge and random forest models (indicated by higher MSE and lower R-squared), the random forest model still looks to be the best bet. The comparison between actual and predicted values post hyperparameter tuning on random forest model is shown below:
+![](readme_images/actual-vs-predicted-random-forest-tuned.png)
 
 ### Phase 5: Conclusion, Deployment and Key Insights
 
@@ -178,7 +179,7 @@ The above tables indicate that while hyperparameter tuning reduced the accuracy 
 
 For the tuned random forest regression model, the relative feature importance can be viewed below:
 
-IMAGE
+![](readme_images/feature-importance.png)
 
 The below inferences can be made based on the above:
 
