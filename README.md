@@ -43,7 +43,8 @@ For this project, the focus is on analyzing the branded food data provided by FD
 - food_nutrient.csv: This file shows the nutrients (indicated by unique IDs used in the nutrient.csv file) for each branded food item (indicated by their unique ID in the branded_food.csv file) along with their amounts
 
 For this project, it was important to consolidate the date from the above three files into a single CSV file which has one row for each branded food item with individual columns that shows the quantity of each nutrient, along with the overall energy and serving size values. The below visualization shows how the consolidation is done through multiple joins across the 3 files.
-IMAGE
+
+![](readme_images/data_preparation_flow.png)
 
 To achieve this, the 3 files were imported to 3 different BigQuery tables after which a BigQuery query was prepared to complete the consolidation. The template query can be viewed in the file [data_prep_bq.sql](https://github.com/devimanava/capstone-project/blob/main/data_prep_bq.sql).
 
@@ -91,7 +92,8 @@ The branded food category column was encoded using one-hot encoding to perform c
 
 
 Keeping the encoded food category column aside, the correlation matrix looks like the one below:
-IMAGE
+
+![](readme_images/correlation_matrix.png)
 
 <ins>4. Data splitting approach</ins>:
 
@@ -171,6 +173,7 @@ The above tables indicate that while hyperparameter tuning reduced the accuracy 
 
 ### Phase 5: Conclusion, Deployment and Key Insights
 
+
 <ins>Relative Importance of Features</ins>:
 
 For the tuned random forest regression model, the relative feature importance can be viewed below:
@@ -184,6 +187,7 @@ The below inferences can be made based on the above:
 - It is interesting to see that serving size and fiber has very little influence at all on energy calculations in the random forest model. Logically, serving size would have had a positive correlation with energy values (larger the portion size, greater the energy) - but while this may be true for a specific food category, serving size may not be a good predictor for energy across food categories since energy per unit serving size would vary
 
 
+
 <ins>Testing the Model with Real World Data</ins>
 
 The tuned random forest model was tested on 2 real life food labels:
@@ -191,6 +195,7 @@ The tuned random forest model was tested on 2 real life food labels:
 - A pretzel food packet with 100 calories per serving size: The model predicted 94.3 as the energy value
 - A salad with 15 calories per serving size: The model predicted 18.6 kCAL as the energy value
 - A frozen pizza with 340 kCAL per serving size: The model predicted 338 kCAL as the energy value
+
 
 
 <ins>Key Insights and Conclusion</ins>
