@@ -42,7 +42,7 @@ For this project, the focus is on analyzing the [branded food data](https://fdc.
 - nutrient.csv: This file has a list of nutrients, including the unique nutrient ID and nutrient name
 - food_nutrient.csv: This file shows the nutrients (indicated by unique IDs used in the nutrient.csv file) for each branded food item (indicated by their unique ID in the branded_food.csv file) along with their amounts
 
-For this project, it was important to consolidate the date from the above three files into a single CSV file which has one row for each branded food item with individual columns that shows the quantity of each nutrient, along with the overall energy and serving size values. The below visualization shows how the consolidation is done through multiple joins across the 3 files.
+For this project, it was important to consolidate the data from the above three files into a single CSV file which has one row for each branded food item with individual columns that shows the quantity of each nutrient, along with the overall energy and serving size values. The below visualization shows how the consolidation is done through multiple joins across the 3 files.
 
 ![](readme_images/data_preparation_flow.png)
 
@@ -61,7 +61,7 @@ After reviewing the data, the below steps were taken to prepare the data for tra
 <ins>1. Address inconsistencies for categorical columns</ins>: 
 
 The below steps were taken to address categorical column inconsistencies:
-- The column ‘Branded Food Category’, which indicated the type of food had multiple unique values indicating the same type (e.g. 'Baby/Infant Foods/Beverages' and 'Baby/Infant – Foods/Beverages'). These values were cleaned up to make them distinct. Additionally, food categories with 100 or less occurrences were removed from the dataset to reduce skewness
+- The column ‘Branded Food Category’, which indicated the type of food had multiple unique values indicating the same type (e.g. 'Baby/Infant Foods/Beverages' and 'Baby/Infant – Foods/Beverages'). These values were cleaned up to make them distinct.
 - The serving size unit column also had overlapping values (e.g. ‘g’ and ‘GRM’). This was also cleaned up to have only distinct, unique values
 
 <ins>2. Address inconsistencies for numerical columns</ins>: 
