@@ -12,10 +12,10 @@ The objective of this project is to extract the branded food data provided by US
 For this exercise, a supervised regression learning approach is used since the objective is to predict the energy values based on nutrient profile. The expected output is a predicted energy value based on the nutrient composition provided in the food label
 
 ### Development Details
-- The Jupyter notebook capstone_final.ipynb has the code and execution results for each phase listed above
-- The file data_prep_bq.sql is a BigQuery query template that reads the different CSV files downloaded from the USDA FDC website for branded data and conducts necessary joins and pivots to get the data in the required format for this project.
-- The file final_result_v2_csv.zip contains the file final_result_v2.csv, which is the output of the BigQuery execution and is used as the starting point in the Jupyter notebook
-- The file 'Capstone - Food Category Mapping-Sheet1.csv' is an offline manual exercise to clean the number of branded food categories. Additional context can be viewed in the Jupyter notebook
+- The Jupyter notebook [capstone_final.ipynb](capstone_final.ipynb) has the code and execution results for each phase listed above
+- The file [data_prep_bq.sql](data_prep_bq.sql) is a BigQuery query template that reads the different CSV files downloaded from the USDA FDC website for branded data and conducts necessary joins and pivots to get the data in the required format for this project.
+- The file [final_result_v2_csv.zip](final_result_v2_csv.zip) contains the file final_result_v2.csv, which is the output of the BigQuery execution and is used as the starting point in the Jupyter notebook
+- The file ['Capstone - Food Category Mapping-Sheet1.csv'](https://github.com/devimanava/capstone-project/blob/main/Capstone%20-%20Food%20Category%20Mapping-Sheet1.csv) is an offline manual exercise to clean the number of branded food categories. Additional context can be viewed in the Jupyter notebook
 
 
 ### High Level Approach
@@ -37,7 +37,7 @@ This project largely follows the CRISP-DM framework where the below phases are e
 ### Phase 0: Data Acquisition 
 The data for this project comes from the Food Data Central (FDC) section in the US Department of Agriculture (USDA) website. The FDC webpage hosts comprehensive datasets with detailed information about different food products - the data has been gathered from different sources including Foundation Foods, Experimental Foods, and the USDA Global Branded Food Products Database.
 
-For this project, the focus is on analyzing the branded food data provided by FDC. The data can be downloaded here and has multiple CSV files. For this project the below data sources are considered from the website:
+For this project, the focus is on analyzing the [branded food data](https://fdc.nal.usda.gov/download-datasets) (the 'branded' row in the Latest Downloads section) provided by FDC. The data can be downloaded here and has multiple CSV files. For this project the below data sources are considered from the website:
 - branded_food.csv: This file has the data of all branded food items, including a unique ID, manufacturing company, food name, food category, serving size, serving size unit and list of ingredients
 - nutrient.csv: This file has a list of nutrients, including the unique nutrient ID and nutrient name
 - food_nutrient.csv: This file shows the nutrients (indicated by unique IDs used in the nutrient.csv file) for each branded food item (indicated by their unique ID in the branded_food.csv file) along with their amounts
